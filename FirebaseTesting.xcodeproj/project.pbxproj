@@ -12,6 +12,7 @@
 		2DB4C4FC217E29640087D696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB4C4FA217E29640087D696 /* Main.storyboard */; };
 		2DB4C4FE217E29640087D696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB4C4FD217E29640087D696 /* Assets.xcassets */; };
 		2DB4C501217E29640087D696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB4C4FF217E29640087D696 /* LaunchScreen.storyboard */; };
+		2DB4C50B217E42D70087D696 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DB4C50A217E42D70087D696 /* GoogleService-Info.plist */; };
 		AD747ECF8A6FA1E8A88A65D6 /* Pods_FirebaseTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90690EC793BBC827671A2BEF /* Pods_FirebaseTesting.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		2DB4C4FD217E29640087D696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB4C500217E29640087D696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB4C502217E29640087D696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DB4C50A217E42D70087D696 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90690EC793BBC827671A2BEF /* Pods_FirebaseTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDADD4DBF6BFD09EAA246498 /* Pods-FirebaseTesting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTesting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTesting/Pods-FirebaseTesting.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				2DB4C4FD217E29640087D696 /* Assets.xcassets */,
 				2DB4C4FF217E29640087D696 /* LaunchScreen.storyboard */,
 				2DB4C502217E29640087D696 /* Info.plist */,
+				2DB4C50A217E42D70087D696 /* GoogleService-Info.plist */,
 			);
 			path = FirebaseTesting;
 			sourceTree = "<group>";
@@ -100,6 +103,7 @@
 				2DB4C4F0217E29640087D696 /* Frameworks */,
 				2DB4C4F1217E29640087D696 /* Resources */,
 				DD19BE79D97D7DFB490CF665 /* [CP] Embed Pods Frameworks */,
+				203A7CFCE2106C3C161B7979 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DB4C501217E29640087D696 /* LaunchScreen.storyboard in Resources */,
+				2DB4C50B217E42D70087D696 /* GoogleService-Info.plist in Resources */,
 				2DB4C4FE217E29640087D696 /* Assets.xcassets in Resources */,
 				2DB4C4FC217E29640087D696 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +162,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		203A7CFCE2106C3C161B7979 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseTesting/Pods-FirebaseTesting-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseTesting/Pods-FirebaseTesting-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9F2B8D1D195E3E800667E5DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,12 +211,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseTesting/Pods-FirebaseTesting-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
